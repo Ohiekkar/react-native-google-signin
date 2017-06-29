@@ -71,7 +71,11 @@ class GoogleSignin {
     }
 
     params = [
-	params.scopes || [], params.iosClientId, params.offlineAccess ? params.webClientId : '', params.hostedDomain ? params.hostedDomain : null
+      params.iosClientId,
+      params.scopes || [],
+      params.webClientId || '',
+      params.offlineAccess || false,
+      params.hostedDomain || null,
     ];
 
     RNGoogleSignin.configure(...params);
